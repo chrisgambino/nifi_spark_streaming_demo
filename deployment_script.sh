@@ -17,3 +17,9 @@ mkdir /home/nifi/
 mkdir /home/nifi/workflow_v4/
 chmod 777 -R /home/nifi/workflow_v4/
 mv event_generator.py /home/nifi/workflow_v4
+
+su hdfs
+hadoop dfs -mkdir /user/nifi/
+hadoop dfs -mkdir /user/nifi/raw_logs
+hadoop dfs -chown -R nifi:nifi /user/nifi/
+exit
